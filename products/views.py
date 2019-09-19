@@ -115,7 +115,7 @@ class PropertyViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
-    filter_fields = ('type', 'product__name', 'name')
+    filter_fields = ('type', 'product__name',)
     filter_backends = (filters.DjangoFilterBackend,)
     queryset = Property.objects.all()
     serializer_class = serializer.PropertySerializer
